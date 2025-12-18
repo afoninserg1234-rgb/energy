@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Энергия - ЖД Перевозки</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js"> </script>
+</head>
+<body>
+     <div class="page-transition" id="page-transition"></div>
+    
+    <!-- Кнопка телефона -->
+    <div class="phone-button" id="phoneButton">
+        <i class="fas fa-phone"></i>
+        <div class="phone-tooltip" id="phoneTooltip">
+            <h3>Прямая связь с топ-менеджером</h3>
+            <p>По вопросам договоров и сотрудничества</p>
+            <div class="phone-number">+7 (999) 123-45-67</div>
+            <p class="phone-note">Иванов Петр Борисович<br>Директор по развитию</p>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <img src="img\logo2.png" alt="Логотип Энергия">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#main-page" class="nav-link">Главная</a></li>
+                    <li><a href="#about-page" class="nav-link">О нас</a></li>
+                    <li><a href="#services-page" class="nav-link">Услуги</a></li>
+                    <li><a href="#documents-page" class="nav-link">Документы</a></li>
+                    <li><a href="#contacts-page" class="nav-link">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page active" id="main-page">
+            <!--<div class="page-title">ООО "Энергия"</div>-->
+            <div class="main-content">
+                <h1>ООО "Энергия"</h1>
+                <h4>Осуществляем перевозки быстро и качественно. Ваш заказ - наше исполнение</h4>
+                <div>
+                    <!-- Кнопка калькулятора только на главной -->
+                    <button class="glow-on-hover" type="button" id="calculator-btn-main">Калькулятор стоимости маршрута</button>
+                </div>
+            </div>
+            <!-- Убрана кнопка из btn-container на главной -->
+        </div>
+
+        <div class="page hidden" id="about-page">
+            <!--<div class="page-title">О нас</div>-->
+            <div class="page-content">
+                <h2>О нас</h2>
+                <div class="textbox">
+                    <p>ООО "Энергия" - современная транспортно-логистическая компания, специализирующаяся на железнодорожных перевозках по России и странам СНГ.</p>
+                    <p>Наша компания подключена к системе электронной обработки перевозочных документов <strong>АС "ЭТРАН"</strong>, что дает нашим клиентам существенные преимущества:</p>
+                    
+                    <div class="advantages-grid">
+                        <div class="advantage-item">
+                            <h4>Скорость оформления</h4>
+                            <p>Электронная подготовка и отправка документов в 3 раза быстрее бумажного документооборота</p>
+                        </div>
+                        <div class="advantage-item">
+                            <h4>Отслеживание в реальном времени</h4>
+                            <p>Круглосуточный мониторинг движения груза на всех этапах перевозки</p>
+                        </div>
+                        <div class="advantage-item">
+                            <h4>Минимизация ошибок</h4>
+                            <p>Автоматическая проверка данных и исключение человеческого фактора</p>
+                        </div>
+                        <div class="advantage-item">
+                            <h4>Юридическая значимость</h4>
+                            <p>Электронные документы имеют полную юридическую силу</p>
+                        </div>
+                        <div class="advantage-item">
+                            <h4>Сокращение издержек</h4>
+                            <p>Экономия на бумаге, печати и курьерской доставке документов</p>
+                        </div>
+                        <div class="advantage-item">
+                            <h4>Интеграция с ГИС "Учет"</h4>
+                            <p>Автоматическая передача данных в государственную систему учета</p>
+                        </div>
+                    </div>
+                    
+                    <!--<h3>Наши преимущества</h3>
+                    <ul>
+                        <li><i class="fas fa-check" ></i> Опытные логисты с многолетним стажем</li>
+                        <li><i class="fas fa-check" ></i> Современные системы отслеживания грузов</li>
+                        <li><i class="fas fa-check" ></i> Круглосуточная поддержка клиентов</li>
+                        <li><i class="fas fa-check" ></i> Гибкие условия сотрудничества</li>
+                        <li><i class="fas fa-check" ></i> Полная интеграция с системой "ЭТРАН"</li>
+                        <li><i class="fas fa-check" ></i> Работа по кодам ЕТСНГ и действующим тарифам</li>
+                    </ul>-->
+                </div>
+                <!-- Кнопка калькулятора внизу страницы -->
+                <div class="btn-container">
+                    <button class="glow-on-hover calculator-btn" type="button">Калькулятор стоимости маршрута</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page hidden" id="services-page">
+            <!--<div class="page-title">Услуги</div>-->
+            <div class="page-content">
+                <h2>Услуги</h2>
+                <div class="textbox">
+                    <ul>
+                        <li><a href="#">-<i class="fas fa-train"></i></a> Предоставление подвижного состава под погрузку</li>
+                        <li><a href="#">-<i class="fas fa-parking"></i></a> Отстой вагонов</li>
+                        <li><a href="#">-<i class="fas fa-calculator"></i></a> Расчет и оплата жд тарифа по территории России</li>
+                        <li><a href="#">-<i class="fas fa-globe"></i></a> Расчет и оплата жд тарифа по СНГ, Балтии, Монголии</li>
+                        <li><a href="#">-<i class="fas fa-headset"></i></a> Консультационные услуги по ЖД перевозкам</li>
+                    </ul>
+                </div>
+                <!-- Кнопка калькулятора внизу страницы -->
+                <div class="btn-container">
+                    <button class="glow-on-hover calculator-btn" type="button">Калькулятор стоимости маршрута</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page hidden" id="documents-page">
+            <!--<div class="page-title">Документы</div>-->
+            <div class="page-content">
+                <h2>Документы</h2>
+                <div class="textbox">
+                    <h3>Грузоперевозки</h3>
+                    <ol>
+                        <li><a href="#">-<i class="fas fa-tint"></i></a> Перевозки грузов в танк контейнерах</li>
+                        <li><a href="#">-<i class="fas fa-container-storage"></i></a> Контейнерные перевозки по всему миру</li>
+                        <li><a href="#">-<i class="fas fa-boxes"></i></a> Грузоотправитель/Грузополучатель, Погрузка/выгрузка вагонов</li>
+                        <li><a href="#">-<i class="fas fa-ship"></i></a> Паромные перевозки</li>
+                    </ol>
+                </div>
+                <div class="textbox">
+                    <h3>Документальное сопровождение</h3>
+                    <ul>
+                        <li><a href="#">-<i class="fas fa-file-contract"></i></a> Оформление транспортных накладных</li>
+                        <li><a href="#">-<i class="fas fa-passport"></i></a> Таможенное оформление грузов</li>
+                        <li><a href="#">-<i class="fas fa-file-invoice-dollar"></i></a> Финансовые документы и отчетность</li>
+                        <li><a href="#">-<i class="fas fa-shield-alt"></i></a> Страхование грузов</li>
+                        <li><a href="#">-<i class="fas fa-certificate"></i></a> Сертификаты соответствия и лицензии</li>
+                    </ul>
+                </div>
+                <!-- Кнопка калькулятора внизу страницы -->
+                <div class="btn-container">
+                    <button class="glow-on-hover calculator-btn" type="button">Калькулятор стоимости маршрута</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page hidden" id="contacts-page">
+            <!--<div class="page-title">Контакты</div>-->
+            <div class="page-content">
+                <h2>Контакты</h2>
+                <div class="textbox">
+                    <div class="container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Должность</th>
+                                    <th>ФИО</th>
+                                    <th>Телефон</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Генеральный директор</td>
+                                    <td>Афонин Сергей Сергеевич</td>
+                                    <td>+7 (964) 866-08-88</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Начальник отдела перевозок</td>
+                                    <td>Петров Петр Петрович</td>
+                                    <td>+7 (923) 456-78-90</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Главный бухгалтер</td>
+                                    <td>Сидорова Мария Васильевна</td>
+                                    <td>+7 (934) 567-89-01</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Начальник логистического отдела</td>
+                                    <td>Кузнецов Алексей Сергеевич</td>
+                                    <td>+7 (945) 678-90-12</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Менеджер по работе с клиентами</td>
+                                    <td>Смирнова Ольга Дмитриевна</td>
+                                    <td>+7 (956) 789-01-23</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Кнопка калькулятора внизу страницы -->
+                <div class="btn-container">
+                    <button class="glow-on-hover calculator-btn" type="button">Калькулятор стоимости маршрута</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page hidden" id="calculator-page">
+            <!--<div class="page-title">Калькулятор</div>-->
+            <div class="page-content">
+                <h2>Калькулятор стоимости перевозки</h2>
+                <div class="textbox">
+                    <p>Рассчитайте примерную стоимость железнодорожной перевозки вашего груза. Укажите параметры маршрута и груза для получения расчета. Расчет производится согласно кодам ЕТСНГ и действующим тарифам.</p>
+                </div>
+                
+                <form class="calculator-form" id="calculator-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from">Откуда (станция отправления):</label>
+                            <input type="text" id="from" placeholder="Например: Москва-Товарная" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="to">Куда (станция назначения):</label>
+                            <input type="text" id="to" placeholder="Например: Санкт-Петербург-Сортировочный" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cargo-type">Тип груза (код ЕТСНГ):</label>
+                            <select id="cargo-type" required>
+                                <option value="">Выберите тип груза</option>
+                                <option value="010000">010000 - Зерновые культуры</option>
+                                <option value="031000">031000 - Уголь каменный</option>
+                                <option value="053000">053000 - Нефть сырая</option>
+                                <option value="121000">121000 - Лесоматериалы</option>
+                                <option value="311000">311000 - Черные металлы</option>
+                                <option value="411000">411000 - Цемент</option>
+                                <option value="531000">531000 - Минеральные удобрения</option>
+                                <option value="661000">661000 - Автомобили</option>
+                                <option value="681000">681000 - Контейнеры</option>
+                                <option value="911000">911000 - Прочие грузы</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="vehicle-type">Род подвижного состава:</label>
+                            <select id="vehicle-type" required>
+                                <option value="">Выберите тип подвижного состава</option>
+                                <option value="container">Контейнер (20 футов)</option>
+                                <option value="container40">Контейнер (40 футов)</option>
+                                <option value="tank">Танк-контейнер</option>
+                                <option value="wagon">Вагон (крытый)</option>
+                                <option value="platform">Платформа</option>
+                                <option value="cistern">Цистерна</option>
+                                <option value="gondola">Полувагон</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="distance">Расстояние (км):</label>
+                            <input type="number" id="distance" placeholder="Введите расстояние в км" min="100" max="10000" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="weight">Вес груза (тонн):</label>
+                            <input type="number" id="weight" placeholder="Введите вес в тоннах" min="1" max="100" step="0.1" required>
+                        </div>
+                    </div>
+                    
+                    <!--<div class="form-group">
+                        <label for="cargo-description">Описание груза:</label>
+                        <textarea id="cargo-description" placeholder="Подробное описание груза, упаковка, особые условия перевозки"></textarea>
+                    </div>-->
+                    
+                    <button class="glow-on-hover" type="submit">Рассчитать стоимость</button>
+                </form>
+                
+                <div class="calculator-result" id="calculator-result">
+                    <h3>Примерная стоимость перевозки</h3>
+                    <p>Маршрут: <span id="route-from"></span> → <span id="route-to"></span></p>
+                    <p>Тип груза (ЕТСНГ): <span id="result-cargo-type"></span></p>
+                    <p>Род подвижного состава: <span id="result-vehicle-type"></span></p>
+                    <p>Расстояние: <span id="result-distance"></span> км</p>
+                    <p>Вес: <span id="result-weight"></span> тонн</p>
+                    <div class="price" id="result-price">0 ₽</div>
+                    <p><em>Цена является ориентировочной. Для получения точного расчета свяжитесь с нашими менеджерами.</em></p>
+                    <p><strong>Примечание:</strong> Расчет выполнен согласно действующим тарифам и кодам ЕТСНГ. Окончательная стоимость может отличаться в зависимости от сезонных коэффициентов, типа подвижного состава и дополнительных услуг.</p>
+                </div>
+                
+                <!--<div class="btn-container">
+                    <button class="glow-on-hover" type="button" id="back-to-main">Вернуться на главную</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Реквизиты компании</h3>
+                <p><strong>ООО "Энергия"</strong></p>
+                <p>ИНН: 5800015654</p>
+                <p>КПП: 580001001</p>
+                <p>ОГРН: 1255800003799</p>
+                
+            </div>
+            
+            <div class="footer-section">
+                <h3>Адрес:</h3>
+                <p> 440052, г. Пенза, ул. Куйбышева, д. 18-а, офис 3</p>
+                <p>Email: oooenergiy2025@mal.ru</p>
+                <p>Сайт: www.energia-transport.ru</p>
+                <p>Телефон: +7 (495) 123-45-67</p>
+                <p>Экстренная связь: круглосуточно</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Мы в социальных сетях</h3>
+                <div class="social-links">
+                    <a href="#" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" title="VK"><i class="fab fa-vk"></i></a>
+                    <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p>Подпишитесь на наши обновления</p>
+                <p>Будьте в курсе новых тарифов и акций</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 ООО "Энергия". Все права защищены.</p>
+            <p>Железнодорожные перевозки по России и СНГ</p>
+        </div>
+    </footer>
+</body>
+    </html>
