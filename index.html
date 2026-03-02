@@ -17,11 +17,11 @@
         <div class="phone-tooltip" id="phoneTooltip">
             <h3>Прямая связь с топ-менеджером</h3>
             <p>По вопросам договоров и сотрудничества</p>
-            <div class="phone-number">+7 (999) 123-45-67</div>
-            <p class="phone-note">Иванов Петр Борисович<br>Директор по развитию</p>
+            <div class="phone-number">+7 (917) 586-20-69</div>
+            <!--<p class="phone-note">Иванов Петр Борисович<br>Директор по развитию</p>-->
         </div>
     </div>
-    
+        
     <div class="wrapper">
         <div class="header">
             <div class="logo">
@@ -47,6 +47,9 @@
                     <!-- Кнопка калькулятора только на главной -->
                     <button class="glow-on-hover" type="button" id="calculator-btn-main">Калькулятор стоимости маршрута</button>
                 </div>
+                <button class="energy-contact-btn" id="energyContactBtn">
+                    Оставьте, пожалуйста, Ваши контактные данные
+                </button>
             </div>
             <!-- Убрана кнопка из btn-container на главной -->
         </div>
@@ -109,13 +112,17 @@
                 <h2>Услуги</h2>
                 <div class="textbox">
                     <ul>
-                        <li><a href="#">-<i class="fas fa-train"></i></a> Предоставление подвижного состава под погрузку</li>
+                        <li><a href="page-train\page-train.html">-<i class="fas fa-train"></i></a> Предоставление подвижного состава под погрузку</li>
                         <li><a href="#">-<i class="fas fa-parking"></i></a> Отстой вагонов</li>
                         <li><a href="#">-<i class="fas fa-calculator"></i></a> Расчет и оплата жд тарифа по территории России</li>
                         <li><a href="#">-<i class="fas fa-globe"></i></a> Расчет и оплата жд тарифа по СНГ, Балтии, Монголии</li>
                         <li><a href="#">-<i class="fas fa-headset"></i></a> Консультационные услуги по ЖД перевозкам</li>
                     </ul>
                 </div>
+                    <!--<div class="page-train">
+                        <h2>Предоставление подвижного состава под погрузку</h2>
+                        <p>Lorem Ipsum 50</p>
+                    </div>-->
                 <!-- Кнопка калькулятора внизу страницы -->
                 <div class="btn-container">
                     <button class="glow-on-hover calculator-btn" type="button">Калькулятор стоимости маршрута</button>
@@ -177,33 +184,20 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Начальник отдела перевозок</td>
-                                    <td>Петров Петр Петрович</td>
-                                    <td>+7 (923) 456-78-90</td>
+                                    <td>Топ менеджер по работе с клиентами</td>
+                                    <td></td>
+                                    <td>+7 (917) 586-20-69</td>
                                 </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Главный бухгалтер</td>
-                                    <td>Сидорова Мария Васильевна</td>
-                                    <td>+7 (934) 567-89-01</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Начальник логистического отдела</td>
-                                    <td>Кузнецов Алексей Сергеевич</td>
-                                    <td>+7 (945) 678-90-12</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Менеджер по работе с клиентами</td>
-                                    <td>Смирнова Ольга Дмитриевна</td>
-                                    <td>+7 (956) 789-01-23</td>
-                                </tr>
-                                
                             </tbody>
-                        </table>
+                        </table> <!-- ДОБАВЬТЕ ЭТОТ ЗАКРЫВАЮЩИЙ ТЕГ! -->
+    
+                        <!--<button class="energy-contact-btn" id="energyContactBtn">
+                            Оставьте, пожалуйста, Ваши контактные данные
+                        </button>-->
                     </div>
                 </div>
+    
+    
                 <!-- Кнопка калькулятора внизу страницы -->
                 <div class="btn-container">
                     <button class="glow-on-hover calculator-btn" type="button">Калькулятор стоимости маршрута</button>
@@ -321,7 +315,7 @@
                 <p> 440052, г. Пенза, ул. Куйбышева, д. 18-а, офис 3</p>
                 <p>Email: oooenergiy2025@mal.ru</p>
                 <p>Сайт: www.energia-transport.ru</p>
-                <p>Телефон: +7 (495) 123-45-67</p>
+                <p>Телефон: +7 (917) 586-20-69</p>
                 <p>Экстренная связь: круглосуточно</p>
             </div>
             
@@ -343,5 +337,41 @@
             <p>Железнодорожные перевозки по России и СНГ</p>
         </div>
     </footer>
+    <!-- Модальное окно с формой (изначально скрыто) -->
+    <div class="energy-contact-modal" id="energyContactModal">
+        <div class="energy-contact-modal-content">
+            <div class="energy-modal-header">
+                <h3>Оставьте Ваши контактные данные</h3>
+                <button class="energy-close-btn" id="energyCloseBtn">&times;</button>
+            </div>
+            <div class="energy-modal-body">
+                <form id="energyContactForm">
+                    <div class="energy-form-group">
+                        <label for="energyName">Имя *</label>
+                        <input type="text" id="energyName" class="energy-form-control" placeholder="Введите ваше имя" required>
+                    </div>
+                    
+                    <div class="energy-form-group">
+                        <label for="energyPhone">Телефон *</label>
+                        <input type="tel" id="energyPhone" class="energy-form-control" placeholder="+7 (XXX) XXX-XX-XX" required>
+                    </div>
+                    
+                    <div class="energy-form-group">
+                        <label for="energyEmail">Электронная почта *</label>
+                        <input type="email" id="energyEmail" class="energy-form-control" placeholder="example@mail.ru" required>
+                    </div>
+                </form>
+            </div>
+            <div class="energy-modal-footer">
+                <button type="button" class="energy-btn energy-btn-close" id="energyCloseModalBtn">Закрыть</button>
+                <button type="submit" form="energyContactForm" class="energy-btn energy-btn-submit">Отправить данные</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Уведомление об успешной отправке -->
+    <div class="energy-notification" id="energyNotification">
+        Ваши данные успешно отправлены! Спасибо!
+    </div>
 </body>
-    </html>
+</html>
