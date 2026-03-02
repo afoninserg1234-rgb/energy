@@ -33,6 +33,11 @@
             if (targetPage) {
                 targetPage.classList.remove('hidden');
                 targetPage.classList.add('active');
+                
+                // Если переключились на страницу контактов - инициализируем кнопку
+                if (targetPageId === 'contacts-page') {
+                    setTimeout(initContactButton, 100);
+                }
             }
             
             // Убираем анимацию перехода
@@ -198,9 +203,16 @@
                 // Небольшая задержка для плавного перехода при загрузке
                 setTimeout(() => {
                     switchPage(targetPage);
+                    // Если сразу загружаемся на страницу контактов
+                    if (targetPage === 'contacts-page') {
+                        setTimeout(initContactButton, 600);
+                    }
                 }, 300);
             }
         }
+        
+        // Пробуем инициализировать кнопку при загрузке (на случай если страница контактов активна)
+        setTimeout(initContactButton, 500);
     });
     
     // ===== ДОПОЛНИТЕЛЬНЫЕ ФУНКЦИИ =====
@@ -228,3 +240,143 @@
     console.log('Версия: 1.0');
     console.log('Дата сборки: ' + new Date().toLocaleDateString());
 });
+
+// ===== ФУНКЦИЯ ДЛЯ ИНИЦИАЛИЗАЦИИ КНОПКИ СБОРА КОНТАКТОВ =====
+function initContactButton() {
+    console.log('Попытка инициализации кнопки сбора контактов...');
+    
+    // Получаем элементы DOM
+    const energyContactBtn = document.getElementById('energyContactBtn');
+    const energyContactModal = document.getElementById('energyContactModal');
+    const energyCloseBtn = document.getElementById('energyCloseBtn');
+    const energyCloseModalBtn = document.getElementById('energyCloseModalBtn');
+    const energyContactForm = document.getElementById('energyContactForm');
+    const energyNotification = document.getElementById('energyNotification');
+    
+    // Проверяем, существует ли кнопка на странице
+    if (!energyContactBtn) {
+        console.log('Кнопка сбора контактов не найдена на этой странице');
+        return false;
+    }
+    
+    // Проверяем, не инициализирована ли уже кнопка
+    if (energyContactBtn.getAttribute('data-initialized') === 'true') {
+        console.log('Кнопка уже инициализирована');
+        return true;
+    }
+    
+    console.log('Кнопка сбора контактов найдена, инициализируем...');
+    
+    // Открытие модального окна при клике на кнопку
+    energyContactBtn.addEventListener('click', function() {
+        console.log('Открытие формы сбора контактов');
+        energyContactModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Отключаем прокрутку фона
+    });
+    
+    // Закрытие модального окна
+    const closeEnergyModal = () => {
+        console.log('Закрытие формы сбора контактов');
+        energyContactModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Восстанавливаем прокрутку фона
+    };
+    
+    if (energyCloseBtn) {
+        energyCloseBtn.addEventListener('click', closeEnergyModal);
+    }
+    
+    if (energyCloseModalBtn) {
+        energyCloseModalBtn.addEventListener('click', closeEnergyModal);
+    }
+    
+    // Закрытие модального окна при клике вне его
+    if (energyContactModal) {
+        energyContactModal.addEventListener('click', (e) => {
+            if (e.target === energyContactModal) {
+                closeEnergyModal();
+            }
+        });
+    }
+    
+    // Обработка отправки формы
+    if (energyContactForm) {
+        energyContactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Получаем данные из формы
+            const name = document.getElementById('energyName').value;
+            const phone = document.getElementById('energyPhone').value;
+            const email = document.getElementById('energyEmail').value;
+            
+            console.log('ООО "Энергия": отправлены контактные данные');
+            console.log('Имя:', name);
+            console.log('Телефон:', phone);
+            console.log('Email:', email);
+            
+            // Показываем уведомление об успешной отправке
+            if (energyNotification) {
+                energyNotification.style.display = 'block';
+            }
+            
+            // Закрываем модальное окно
+            closeEnergyModal();
+            
+            // Сбрасываем форму
+            energyContactForm.reset();
+            
+            // Скрываем уведомление через 3 секунды
+            setTimeout(() => {
+                if (energyNotification) {
+                    energyNotification.style.display = 'none';
+                }
+            }, 3000);
+        });
+    }
+    
+    // Маска для телефона
+    const energyPhoneInput = document.getElementById('energyPhone');
+    if (energyPhoneInput) {
+        energyPhoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length === 0) return;
+            
+            let formattedValue = '+7 ';
+            
+            if (value.length > 1) {
+                formattedValue += '(' + value.substring(1, 4);
+            }
+            
+            if (value.length >= 5) {
+                formattedValue += ') ' + value.substring(4, 7);
+            }
+            
+            if (value.length >= 8) {
+                formattedValue += '-' + value.substring(7, 9);
+            }
+            
+            if (value.length >= 10) {
+                formattedValue += '-' + value.substring(9, 11);
+            }
+            
+            e.target.value = formattedValue;
+        });
+    }
+    
+    // Закрытие по клавише Esc
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && energyContactModal && energyContactModal.style.display === 'flex') {
+            const closeEnergyModal = () => {
+                energyContactModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            };
+            closeEnergyModal();
+        }
+    });
+    
+    // Помечаем кнопку как инициализированную
+    energyContactBtn.setAttribute('data-initialized', 'true');
+    console.log('Кнопка сбора контактов успешно инициализирована');
+    
+    return true;
+}
