@@ -197,15 +197,18 @@ footer {
     background-position: center;
     z-index: -1;
 }
+.page-train {
+    background-color: #7f8c8d;
+    
+}
 
 /* Фоновые изображения для страниц */
 #main-page::before {
     background-image: /*linear-gradient(rgba(173, 183, 199, 0.85), rgba(10, 25, 47, 0.6)), */
                       url('https://www.shutterstock.com/image-photo/logistics-concept-using-modern-technologies-260nw-1994289680.jpg');
 }
-
 #about-page::before {
-    background-image: linear-gradient(rgba(26, 15, 122, 0.85), rgba(4, 31, 56, 0.6)), 
+    background-image: /*linear-gradient(rgba(137, 131, 192, 0.85), rgba(98, 124, 148, 0.2)),*/ 
                       url('https://th.bing.com/th/id/OIP.uQ9ExSe_652d_QdiynnskgHaE8?o=7&cb=ucfimg2&rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3');
 }
 
@@ -467,6 +470,248 @@ table tr:hover {
     background: rgba(100, 255, 218, 0.05);
 }
 
+.container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgb(98, 115, 192);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+        
+.header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #4180bb;
+}
+        
+.header h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+}
+        
+.header p {
+            color: #7f8c8d;
+            font-size: 16px;
+}
+        
+.content {
+            padding: 10px;
+}
+        
+.content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-align: justify;
+}
+        
+        /* Стили кнопки */
+.energy-contact-btn {
+    background-color: #3498db;
+    color: rgb(191, 199, 83);
+    border: none;
+    padding: 16px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+    transition: all 0.3s ease;
+    margin: 20px auto;
+    display: block;
+    width: 350px;
+    text-align: center;
+}
+
+.energy-contact-btn:hover {
+    background-color: #a1bdcf;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(190, 44, 154, 0.5);
+}
+
+/* Модальное окно */
+.energy-contact-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10001;
+    justify-content: center;
+    align-items: center;
+}
+
+.energy-contact-modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: energyModalAppear 0.3s ease-out;
+}
+
+@keyframes energyModalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Заголовок модального окна */
+.energy-modal-header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.energy-modal-header h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.energy-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+}
+
+.energy-close-btn:hover {
+    color: #f1f1f1;
+}
+
+/* Тело модального окна */
+.energy-modal-body {
+    padding: 30px;
+}
+
+.energy-form-group {
+    margin-bottom: 20px;
+}
+
+.energy-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.energy-form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.energy-form-control:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.energy-form-control::placeholder {
+    color: #aaa;
+}
+
+/* Футер модального окна */
+.energy-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-top: 1px solid #eee;
+}
+
+.energy-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.energy-btn-submit {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.energy-btn-submit:hover {
+    background-color: #27ae60;
+}
+
+.energy-btn-close {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.energy-btn-close:hover {
+    background-color: #c0392b;
+}
+
+/* Уведомление */
+.energy-notification {
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2ecc71;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10002;
+    font-weight: 600;
+    animation: energyFadeInOut 3s ease-in-out;
+}
+
+@keyframes energyFadeInOut {
+    0% { opacity: 0; top: 0; }
+    15% { opacity: 1; top: 30px; }
+    85% { opacity: 1; top: 30px; }
+    100% { opacity: 0; top: 0; }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .energy-contact-btn {
+        padding: 14px 20px;
+        font-size: 15px;
+        width: 300px;
+    }
+    
+    .energy-contact-modal-content {
+        width: 95%;
+    }
+    
+    .energy-modal-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .energy-btn {
+        width: 100%;
+    }
+}
 /* ===== КАЛЬКУЛЯТОР ===== */
 .calculator-form {
     display: flex;
